@@ -1,0 +1,72 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Shared Renovate preset for all mongoryhq repositories (monthly, grouped, low-noise).",
+  "extends": [
+    "config:recommended"
+  ],
+  "timezone": "Asia/Taipei",
+  "schedule": [
+    "before 6am on the first day of the month"
+  ],
+  "labels": [
+    "dependencies"
+  ],
+  "prConcurrentLimit": 3,
+  "git-submodules": {
+    "enabled": false
+  },
+  "packageRules": [
+    {
+      "description": "Group all GitHub Actions updates into a single monthly PR and automerge minor/patch when CI passes",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "groupName": "GitHub Actions",
+      "automerge": true,
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "digest"
+      ]
+    },
+    {
+      "description": "Group major GitHub Actions updates together for manual review",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "groupName": "GitHub Actions (major)",
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "automerge": false
+    },
+    {
+      "description": "Group all non-major package updates together per repository",
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchManagers": [
+        "npm",
+        "bundler",
+        "gomod",
+        "pep621"
+      ],
+      "groupName": "all non-major dependencies"
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Track yyjson release version in mongory-core setup_yyjson.sh",
+      "managerFilePatterns": [
+        "/^scripts/setup_yyjson\\.sh$/"
+      ],
+      "matchStrings": [
+        "YYJSON_VERSION=\"(?<currentValue>[^\"]+)\""
+      ],
+      "depNameTemplate": "ibireme/yyjson",
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}
