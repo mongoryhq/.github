@@ -1,19 +1,33 @@
+<p align="center">
+  <img src="https://mongoryhq.github.io/mongory-central/mongoryhq-icon.png" alt="Mongory" width="88" />
+</p>
+
 # Mongory
 
-**One MongoDB-style query language, native in every runtime.**
-Match plain in-memory data (maps, objects, structs, dicts) with `$eq`, `$gte`, `$in`, `$elemMatch`, `$regex` and more — with identical semantics across languages, verified by a shared conformance spec.
+**One MongoDB-style query & rule language, native in every runtime — with built-in Explain & Trace debugging.**
 
-👉 **[Try the Playground](https://mongoryhq.github.io/mongory-central/)**
+Compile JSON/MongoDB-style conditions (`$eq`, `$gte`, `$in`, `$elemMatch`, `$every`, `$present`, `$regex`, ...) once and evaluate plain in-memory data (maps, structs, objects, dicts, arrays) with **identical semantics across 5 languages**, verified by a shared conformance spec.
+
+👉 **[Try the Interactive Playground & Visual Trace Debugger ↗](https://mongoryhq.github.io/mongory-central/)**
 
 ## Packages
 
-| Language | Repo | Install |
-|---|---|---|
-| Python | [mongory-py](https://github.com/mongoryhq/mongory-py) | `pip install mongory` |
-| TypeScript / JS | [mongory-js](https://github.com/mongoryhq/mongory-js) | `npm install mongory-js` |
-| Go | [mongory-go](https://github.com/mongoryhq/mongory-go) | `go get github.com/mongoryhq/mongory-go` |
-| Ruby | [mongory-rb](https://github.com/mongoryhq/mongory-rb) | `gem install mongory` |
-| C99 core | [mongory-core](https://github.com/mongoryhq/mongory-core) | CMake |
+| Language | Repo | Version | Install | Engine |
+|---|---|---|---|---|
+| **TypeScript / JS** | [mongory-js](https://github.com/mongoryhq/mongory-js) | `v0.2.0` | `npm install mongory-js` | Pure TS (0 deps, ESM + CJS) |
+| **Go** | [mongory-go](https://github.com/mongoryhq/mongory-go) | `v0.4.0` | `go get github.com/mongoryhq/mongory-go` | Pure Go (0 deps, 0 allocs/op hot-path) |
+| **Python** | [mongory-py](https://github.com/mongoryhq/mongory-py) | `v0.1.1` | `pip install mongory` | CPython C-API over `mongory-core` |
+| **Ruby** | [mongory-rb](https://github.com/mongoryhq/mongory-rb) | `v2.1.0` | `gem install mongory` | Native C99 ext (`mongory-core`, Ruby 2.6–4.0) |
+| **C99 Core** | [mongory-core](https://github.com/mongoryhq/mongory-core) | `v0.3.0` | CMake / `pkg-config` | Portable C99 arena pool + opt-in `yyjson` |
+
+## Why Mongory?
+
+| Capability | Mongory | CEL / OPA Rego | JSONLogic | `sift` / `mingo` |
+|---|---|---|---|---|
+| **Syntax** | Familiar MongoDB JSON query syntax | Custom expression / policy DSL | Custom JSON AST | MongoDB query syntax |
+| **Cross-language parity** | 5 languages locked to [`mongory-spec`](https://github.com/mongoryhq/mongory-spec) | Separate runtimes / heavy SDKs | Community ports vary in edge cases | JS/TS only |
+| **Visual debugging** | Built-in cost-sorted `explain` & short-circuit `trace` trees | Limited / external | None | None |
+| **Performance & footprint** | Zero-alloc Go hot-path, C99 arena core, 0-dep TS | Heavy parser/VM | Interpreted | Slower on large `$in` |
 
 ## Project
 
