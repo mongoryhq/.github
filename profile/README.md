@@ -16,7 +16,7 @@ Compile JSON/MongoDB-style conditions (`$eq`, `$gte`, `$in`, `$elemMatch`, `$eve
 |---|---|---|---|---|
 | **TypeScript / JS** | [mongory-js](https://github.com/mongoryhq/mongory-js) | `v0.2.0` | `npm install mongory-js` | Pure TS (0 deps, ESM + CJS) |
 | **Go** | [mongory-go](https://github.com/mongoryhq/mongory-go) | `v0.4.0` | `go get github.com/mongoryhq/mongory-go` | Pure Go (0 deps, 0 allocs/op hot-path) |
-| **Python** | [mongory-py](https://github.com/mongoryhq/mongory-py) | `v0.1.1` | `pip install mongory` | CPython C-API over `mongory-core` |
+| **Python** | [mongory-py](https://github.com/mongoryhq/mongory-py) | `v0.2.0` | `pip install mongory` | CPython C-API over `mongory-core` |
 | **Ruby** | [mongory-rb](https://github.com/mongoryhq/mongory-rb) | `v2.1.0` | `gem install mongory` | Native C99 ext (`mongory-core`, Ruby 2.6–4.0) |
 | **C99 Core** | [mongory-core](https://github.com/mongoryhq/mongory-core) | `v0.3.0` | CMake / `pkg-config` | Portable C99 arena pool + opt-in `yyjson` |
 
