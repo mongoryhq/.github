@@ -4,11 +4,11 @@
 
 # Mongory
 
-**One MongoDB-style query & rule language, native in every runtime — with built-in Explain & Trace debugging.**
+**One MongoDB-style query and rule language, native in every runtime, with built-in Explain & Trace debugging.**
 
-Compile JSON/MongoDB-style conditions (`$eq`, `$gte`, `$in`, `$elemMatch`, `$every`, `$present`, `$regex`, ...) once and evaluate plain in-memory data (maps, structs, objects, dicts, arrays) with **identical semantics across 5 languages**, verified by a shared conformance spec.
+Compile JSON/MongoDB-style conditions (`$eq`, `$gte`, `$in`, `$elemMatch`, `$every`, `$present`, `$regex`, ...) once and evaluate plain in-memory data (maps, structs, objects, dicts, arrays) with identical semantics across 5 languages, verified by a shared conformance spec.
 
-👉 **[Try the Interactive Playground & Visual Trace Debugger ↗](https://mongoryhq.github.io/mongory-central/)**
+**[Try the Interactive Playground & Visual Trace Debugger ↗](https://mongoryhq.github.io/mongory-central/)**
 
 ## Packages
 
@@ -17,7 +17,7 @@ Compile JSON/MongoDB-style conditions (`$eq`, `$gte`, `$in`, `$elemMatch`, `$eve
 | **TypeScript / JS** | [mongory-js](https://github.com/mongoryhq/mongory-js) | `v0.2.0` | `npm install mongory-js` | Pure TS (0 deps, ESM + CJS) |
 | **Go** | [mongory-go](https://github.com/mongoryhq/mongory-go) | `v0.4.0` | `go get github.com/mongoryhq/mongory-go` | Pure Go (0 deps, 0 allocs/op hot-path) |
 | **Python** | [mongory-py](https://github.com/mongoryhq/mongory-py) | `v0.2.1` | `pip install mongory` | CPython C-API over `mongory-core` |
-| **Ruby** | [mongory-rb](https://github.com/mongoryhq/mongory-rb) | `v2.1.1` | `gem install mongory` | Native C99 ext (`mongory-core`, Ruby 2.6–4.0) |
+| **Ruby** | [mongory-rb](https://github.com/mongoryhq/mongory-rb) | `v2.1.1` | `gem install mongory` | Native C99 ext (`mongory-core`, Ruby 2.6-4.0) |
 | **C99 Core** | [mongory-core](https://github.com/mongoryhq/mongory-core) | `v0.3.1` | CMake / `pkg-config` | Portable C99 arena pool + opt-in `yyjson` |
 
 ## Why Mongory?
@@ -31,8 +31,8 @@ Compile JSON/MongoDB-style conditions (`$eq`, `$gte`, `$in`, `$elemMatch`, `$eve
 
 ## Project
 
-- [mongory-spec](https://github.com/mongoryhq/mongory-spec) — language-agnostic conformance fixtures every implementation must pass
-- [mongory-central](https://github.com/mongoryhq/mongory-central) — docs hub & interactive Playground
+- [mongory-spec](https://github.com/mongoryhq/mongory-spec): language-agnostic conformance fixtures every implementation must pass
+- [mongory-central](https://github.com/mongoryhq/mongory-central): docs hub and interactive Playground
 
 ## Contributing
 
